@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Shifu ❤️</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+  <style>
+    body {
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+    .heart {
+      position: absolute;
+      color: red;
+      font-size: 20px;
+      animation: float 5s linear infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(1); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    }
+    button {
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body class="text-center p-6">
+
+  <h1 class="text-4xl font-bold text-pink-700 mb-4">HI MY BEAUTIFUL WIFE SHIFU ❤️</h1>
+  <p class="text-lg text-gray-800 mb-6">
+    I just want to tell you again and again… <br>
+    I LOVE YOU more than words, I MISS YOU every second, <br>
+    I CARE for you deeply and I SUPPORT you in your studies, your dreams, and everything you do. 🌸💫
+  </p>
+
+  <p class="text-lg text-gray-800 mb-6">
+    You are my safe place, my happiness, and my strength. I am always here cheering for you, <br>
+    reminding you that you are never alone in this journey. ✨
+  </p>
+
+  <button id="loveBtn" class="bg-pink-500 text-white px-6 py-2 rounded-full shadow-lg m-2">
+    Show More Love 💕
+  </button>
+
+  <button id="missBtn" class="bg-purple-500 text-white px-6 py-2 rounded-full shadow-lg m-2">
+    How Much I Miss You 😢
+  </button>
+
+  <button id="needBtn" class="bg-red-500 text-white px-6 py-2 rounded-full shadow-lg m-2">
+    From My Heart ❤️
+  </button>
+
+  <div id="message" class="mt-6 text-xl font-semibold text-gray-900"></div>
+
+  <script>
+    const message = document.getElementById("message");
+
+    document.getElementById("loveBtn").addEventListener("click", () => {
+      message.innerHTML = "SHIFU, I LOVE YOU IN A MILLION WAYS 💖 YOU ARE MY EVERYTHING 🌎✨";
+    });
+
+    document.getElementById("missBtn").addEventListener("click", () => {
+      message.innerHTML = "WITHOUT YOU, I FEEL EMPTY 💔 I MISS YOUR VOICE, YOUR LAUGH, YOUR PRESENCE 😭💞";
+    });
+
+    document.getElementById("needBtn").addEventListener("click", () => {
+      message.innerHTML = "MY LOVE, I’VE BEEN CRYING INSIDE FOR YOUR TIME 💔 JUST A LITTLE SPACE IN YOUR DAY, A FEW MOMENTS TO TALK TO ME, TO LOVE ME, TO CARE FOR ME — THAT’S ALL I ASK ❤️🙏";
+    });
+
+    // floating hearts
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+      heart.innerHTML = "❤️";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }, 500);
+  </script>
+
+</body>
+</html>
